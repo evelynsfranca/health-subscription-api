@@ -1,6 +1,12 @@
 # Imagem Ubuntu
 FROM ubuntu:latest AS build 
 
+ARG DATABASE_URL
+ARG DATABASE_NAME
+
+ENV DATABASE_URL=${DATABASE_URL}
+ENV DATABASE_NAME=${DATABASE_NAME}
+
 # Atualização de pacotes
 RUN apt-get update
 # Instalação do OpenJDK
